@@ -448,8 +448,8 @@ atob@^2.1.1:
   resolved "https://registry.yarnpkg.com/atob/-/atob-2.1.2.tgz#6d9517eb9e030d2436666651e86bd9f6f13533c9"
 
 aws-sdk@^2.1.24, aws-sdk@^2.373.0, aws-sdk@^2.7.0:
-  version "2.388.0"
-  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.388.0.tgz#de3f8f5576ccaa3477fe66529bdd1546250e8325"
+  version "2.389.0"
+  resolved "https://registry.yarnpkg.com/aws-sdk/-/aws-sdk-2.389.0.tgz#d1460a44fb96be4f6cf33311f241ea1124080826"
   dependencies:
     buffer "4.9.1"
     events "1.1.1"
@@ -2248,8 +2248,8 @@ es-to-primitive@^1.2.0:
     is-symbol "^1.0.2"
 
 es5-ext@^0.10.14, es5-ext@^0.10.35, es5-ext@^0.10.9, es5-ext@~0.10.14:
-  version "0.10.46"
-  resolved "https://registry.yarnpkg.com/es5-ext/-/es5-ext-0.10.46.tgz#efd99f67c5a7ec789baa3daa7f79870388f7f572"
+  version "0.10.47"
+  resolved "https://registry.yarnpkg.com/es5-ext/-/es5-ext-0.10.47.tgz#d24232e1380daad5449a817be19bde9729024a11"
   dependencies:
     es6-iterator "~2.0.3"
     es6-symbol "~3.1.1"
@@ -3930,9 +3930,9 @@ lcid@^1.0.0:
   dependencies:
     invert-kv "^1.0.0"
 
-"leap-core@git://github.com/leapdao/leap-core.git#fe470f23e28d059c74c6b88df8fccd6a2ac3f809":
-  version "0.20.2"
-  resolved "git://github.com/leapdao/leap-core.git#fe470f23e28d059c74c6b88df8fccd6a2ac3f809"
+leap-core@^0.20.3:
+  version "0.20.3"
+  resolved "https://registry.yarnpkg.com/leap-core/-/leap-core-0.20.3.tgz#05c22ccaf07a42ae27d69d0577f82256d3d555f7"
   dependencies:
     "@types/web3" "^1.0.12"
     babel-polyfill "^6.26.0"

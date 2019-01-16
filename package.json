@@ -59,7 +59,7 @@
     "babel-plugin-transform-builtin-extend": "^1.1.2",
     "babel-runtime": "^6.11.6",
     "dashdash": "^1.14.1",
-    "leap-core": "git://github.com/leapdao/leap-core.git#fe470f23e28d059c74c6b88df8fccd6a2ac3f809",
+    "leap-core": "^0.20.3",
     "web3": "0.20.7"
   }
 }

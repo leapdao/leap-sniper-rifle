@@ -8,8 +8,6 @@ const simpledb = new AWS.SimpleDB();
 
 exports.handler = function handler(event, context, callback) {
   context.callbackWaitsForEmptyEventLoop = true;
-  const path = event.context['resource-path'];
-  const method = event.context['http-method'];
 
   const providerUrl = process.env.PROVIDER_URL;
   const riflePriv = process.env.RIFLE_PRIV;
