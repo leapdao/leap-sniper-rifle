@@ -20,30 +20,9 @@ exports.handler = function handler(event, context, callback) {
   const sdb = new Db(simpledb, tableName);
 
   const manager = new ExitManager(riflePriv, sdb, networkName, web3);
-  const requestHandler = () => {
-    if (path.indexOf('sellExit') > -1) {
-      return manager.sellExit(
-        event.inputProof, 
-        event.transferProof,
-        event.outputIndex,
-        event.inputIndex,
-        event.signedData,
-      );
-    } else if (path.indexOf('test') > -1) {
-      if (method === 'GET') {
-        return Promise.resolve(`called path: ${path}`);
-      }
-    } else if (path.indexOf('rifle') > -1) {
-      if (method === 'GET') {
-        return manager.sniperRifle();
-      }
-    }
-
-    return Promise.reject(`Not Found: unexpected path: ${path}`);
-  };
 
   try {
-    requestHandler().then(data => {
+    manager.sniperRifle().then(data => {
         callback(null, data);
       }).catch(err => {
         callback(err);

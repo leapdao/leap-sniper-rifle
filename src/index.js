@@ -32,7 +32,6 @@ function sendTx(web3, tx) {
 
 function getUnspent(web3, rifleAddr) {
   return new Promise((fulfill, reject) => {
-    console.log('getUspent: ', rifleAddr);
     web3.getUnspent(rifleAddr, (err, unspent) => {
       if (err) {
         reject(`Error: ${err.toString()}`);
@@ -61,11 +60,10 @@ function unspentForAddress(unspent, address, color) {
 };
 
 function makeTransferUxto(utxos, privKey) {
-  console.log('utxos: ', utxos);
   let fromAddr = utxos[0].output.address.toLowerCase();
   const value = utxos.reduce((sum, unspent) => sum + unspent.output.value, 0);
   const color = utxos[0].output.color;
-  console.log('utxos2: ', utxos);
+
   return Tx.transferFromUtxos(utxos, fromAddr, fromAddr, value, color).signAll(privKey);
 }
 
@@ -102,12 +100,10 @@ class ExitManager {
       // fire the rifle:
         // get utxo from rifleAddr
         const unspent = await getUnspent(this.web3, this.rifleAddr);
-        console.log(unspent);
         // create tx spending utxo to same address, and sign it
         const tx = makeTransferUxto([unspent[0]], this.riflePriv);
         // send that shit
         rv = await sendTx(this.web3, tx.toRaw());
-        console.log(rv);
     } else {
       // update db height
       await this.db.updateHeight(this.networkName, chainHeight);

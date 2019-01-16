@@ -3930,9 +3930,9 @@ lcid@^1.0.0:
   dependencies:
     invert-kv "^1.0.0"
 
-leap-core@^0.20.2:
+"leap-core@git://github.com/leapdao/leap-core.git#fe470f23e28d059c74c6b88df8fccd6a2ac3f809":
   version "0.20.2"
-  resolved "https://registry.yarnpkg.com/leap-core/-/leap-core-0.20.2.tgz#6617a87ed840ded499a1190b2863d74d2a0fabb8"
+  resolved "git://github.com/leapdao/leap-core.git#fe470f23e28d059c74c6b88df8fccd6a2ac3f809"
   dependencies:
     "@types/web3" "^1.0.12"
     babel-polyfill "^6.26.0"
