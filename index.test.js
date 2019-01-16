@@ -52,13 +52,12 @@ const sdb = {
 };
 
 const web3 = {
+  getUnspent() {},
   eth: {
     getBlockNumber() {},
     sendRawTransaction() {},
   },
-  plasma: {
-    getUnspent() {},
-}};
+};
 
 describe('Sniper Rifle', () => {
 
@@ -102,7 +101,7 @@ describe('Sniper Rifle', () => {
     };
 
     const txHash = '0x1234';
-    sinon.stub(web3.plasma, 'getUnspent').yields(null, [unspent]);
+    sinon.stub(web3, 'getUnspent').yields(null, [unspent]);
     sinon.stub(web3.eth, 'sendRawTransaction').yields(null, txHash);
 
     const priv = '0xbd54b17c48ac1fc91d5ef2ef02e9911337f8758e93c801b619e5d178094486cc';
