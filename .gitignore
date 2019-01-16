@@ -1,0 +1,20 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+serverless.env.yml
+
+dist/
+lambda.zip
+
+# Testing output
+reports/
+
+# Logs
+yarn-error.log
+
+.webpack
+
+.aws_credentials
