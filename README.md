@@ -21,3 +21,5 @@ yarn test
   - `providerUrl - Leap node RPC URL`
 
   Example Input `Constant: { "networkName": "testnet", "providerUrl": "http://node1.testnet.leapdao.org:8645" }`
+
+**4)** Send some funds to address of `RIFLE_PRIV` on Plasma. These will be spent once the network has no activity between function invocations.
