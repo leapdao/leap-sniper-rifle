@@ -1,42 +1,25 @@
 import { Tx } from 'leap-core';
 import ethUtil from 'ethereumjs-util';
 
+const handleResponse = (fulfill, reject) => (err, value) => {
+  if (err) {
+    reject(`Error: ${err.toString()}`);
+    return;
+  }
+  fulfill(value);
+};
 
-function getBlockNumber(web3) {
-  return new Promise((fulfill, reject) => {
-    web3.eth.getBlockNumber((err, number) => {
-      if (err) {
-        reject(`Error: ${err.toString()}`);
-        return;
-      }
-      fulfill(number);
-    });
-  });
-}
+const getBlockNumber = web3 =>
+  new Promise((fulfill, reject) =>
+    web3.eth.getBlockNumber(handleResponse(fulfill, reject)));
 
-function sendTx(web3, tx) {
-  return new Promise((fulfill, reject) => {
-    web3.eth.sendRawTransaction(tx, (err, txHash) => {
-      if (err) {
-        reject(`Error: ${err.toString()}`);
-        return;
-      }
-      fulfill(txHash);
-    });
-  });
-}
+const sendTx = (web3, tx) =>
+  new Promise((fulfill, reject) =>
+    web3.eth.sendRawTransaction(tx, handleResponse(fulfill, reject)));
 
-function getUnspent(web3, rifleAddr) {
-  return new Promise((fulfill, reject) => {
-    web3.getUnspent(rifleAddr, (err, unspent) => {
-      if (err) {
-        reject(`Error: ${err.toString()}`);
-        return;
-      }
-      fulfill(unspent);
-    });
-  });
-}
+const getUnspent = (web3, rifleAddr) =>
+  new Promise((fulfill, reject) =>
+    web3.getUnspent(rifleAddr, handleResponse(fulfill, reject)));
 
 function makeTransferUxto(utxos, privKey) {
   const fromAddr = utxos[0].output.address.toLowerCase();
