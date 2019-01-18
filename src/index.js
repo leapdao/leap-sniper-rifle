@@ -1,3 +1,12 @@
+
+/**
+ * Copyright (c) 2018-present, Leap DAO (leapdao.org)
+ *
+ * This source code is licensed under the GNU Affero General Public License,
+ * version 3, found in the LICENSE file in the root directory of this source
+ * tree.
+ */
+
 import { Tx } from 'leap-core';
 import ethUtil from 'ethereumjs-util';
 

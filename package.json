@@ -14,7 +14,7 @@
     "package:pack": "cd dist && zip -r ../lambda.zip * && cd ..",
     "test": "mocha -r babel-register -r babel-polyfill *.test.js *.test.js"
   },
-  "license": "MIT",
+  "license": "AGPL-3.0-or-later",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.17.0",
