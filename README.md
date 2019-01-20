@@ -7,15 +7,12 @@ yarn test
 
 ## Deploy
 
-**1)** run this project:
+**1)** run this:
   ```
-  rm -R dist
-  yarn build
-  cd dist
-  open .
+  yarn package
   ```
 
-**2)** Zip everything in that folder, with `index.js` at root level. then upload to the zip to [AWS Lambda](https://eu-west-1.console.aws.amazon.com/lambda/home?region=eu-west-1#/functions/sniperRifle). The lambda functon should have the following parameters:
+**2)** Upload the generated `lambda.zip` to [AWS Lambda](https://eu-west-1.console.aws.amazon.com/lambda/home?region=eu-west-1#/functions/sniperRifle). The lambda functon should have the following parameters:
   - `RIFLE_PRIV - private key to sign rifle transactions, the address also needs funds`
   - `SDB_DOMAIN - name of SimpleDB table, currently leap_rifle`
 
@@ -24,3 +21,5 @@ yarn test
   - `providerUrl - Leap node RPC URL`
 
   Example Input `Constant: { "networkName": "testnet", "providerUrl": "http://node1.testnet.leapdao.org:8645" }`
+
+**4)** Send some funds to address of `RIFLE_PRIV` on Plasma. These will be spent once the network has no activity between function invocations.
