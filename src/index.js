@@ -24,7 +24,7 @@ const getBlockNumber = web3 =>
 
 const sendTx = (web3, txData) =>
   new Promise((fulfill, reject) =>
-    web3.eth.sendRawTransaction({ data: txData }, handleResponse(fulfill, reject)));
+    web3.eth.sendRawTransaction(txData, handleResponse(fulfill, reject)));
 
 const getUnspent = (web3, rifleAddr) =>
   new Promise((fulfill, reject) =>
