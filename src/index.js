@@ -22,9 +22,9 @@ const getBlockNumber = web3 =>
   new Promise((fulfill, reject) =>
     web3.eth.getBlockNumber(handleResponse(fulfill, reject)));
 
-const sendTx = (web3, tx) =>
+const sendTx = (web3, txData) =>
   new Promise((fulfill, reject) =>
-    web3.eth.sendRawTransaction(tx, handleResponse(fulfill, reject)));
+    web3.eth.sendRawTransaction({ data: txData }, handleResponse(fulfill, reject)));
 
 const getUnspent = (web3, rifleAddr) =>
   new Promise((fulfill, reject) =>
@@ -65,7 +65,7 @@ class SniperRifle {
         // create tx spending utxo to same address, and sign it
       const tx = makeTransferUxto([unspent[0]], this.riflePriv);
         // send that shit
-      rv = await sendTx(this.web3, tx.toRaw());
+      rv = await sendTx(this.web3, tx.hex());
     } else {
       // update db height
       await this.db.updateHeight(this.networkName, chainHeight);
