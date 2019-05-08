@@ -11,6 +11,7 @@ import chai, { expect, assert } from 'chai';
 import sinonChai from 'sinon-chai';
 import sinon from 'sinon';
 import { it, describe, afterEach } from 'mocha';
+import { BigInt } from 'jsbi-utils';
 import SniperRifle from './src/index';
 import Db from './src/db';
 
@@ -66,7 +67,7 @@ describe('SniperRifle', () => {
       outpoint: new leap.Outpoint('0x0098c4777c8897fad3ad2ec3cf89b2d8b8aeab1052b857348f9861e1a97bf9ad', 0),
       output: {
         address: '0x6cb117a635dc7633b42089c607fdfc5c60b7d679',
-        value: 1000000000000000000,
+        value: BigInt(1000000000000000000),
         color: 0,
       },
     };
