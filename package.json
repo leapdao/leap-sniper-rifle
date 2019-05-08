@@ -45,7 +45,8 @@
     "webpack": "^3.3.0"
   },
   "dependencies": {
-    "leap-core": "^0.20.3",
+    "babel-plugin-transform-builtin-extend": "^1.1.2",
+    "leap-core": "^0.30.1",
     "web3": "0.20.7"
   }
 }
